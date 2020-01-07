@@ -10,7 +10,7 @@ Our study comprehensively analyzed the association between epigenetic features a
 
 
 
-Here, we provied main source codes for the study.
+Here, we provided main source codes for the study.
 
 #### 1. Identification of DNA methylation and H3K9me3 blocks
 
