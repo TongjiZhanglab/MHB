@@ -6,7 +6,7 @@ Allele-specific DNA methylation and H3K9me3 blocks are critical for early embryo
 
 
 
-Our study profiled allele-specific MHBs in mouse pre-implantation GG / AG embryos. Among more than 500 stable allele-specific MHBs, we identified dozens of potential regulatory MHBs with similar features as known imprinting control regions that may regulate gene transcription and experimentally validated two of them. The study has been warpped up to submit.
+Our study profiled allele-specific MHBs in mouse pre-implantation GG / AG embryos. Among more than 500 stable allele-specific MHBs, we identified dozens of potential regulatory MHBs with similar features to known imprinting control regions that may regulate gene transcription and experimentally validated two of them. The study has been warpped up to submit.
 
 
 
