@@ -35,7 +35,7 @@ stable.paternalSpecific.DHB_ICM.AG_MethylationDensity_siteprof1 \
 stable.paternalSpecific.DHB_TE.GG_MethylationDensity_siteprof1 \
 stable.paternalSpecific.DHB_TE.AG_MethylationDensity_siteprof1 > stable.paternalSpecific.DHB_MethylationDensity.txt
 
-# H3K9me3 in stable allele-specific MHBs. Data source: raw data generated in the study.
+# H3K9me3 signals in stable allele-specific MHBs. Data source: raw data generated in the study.
 
 cd ${path}/H3K9me3
 
