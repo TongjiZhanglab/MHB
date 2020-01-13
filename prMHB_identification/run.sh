@@ -92,27 +92,27 @@ bedtools intersect -wo -a stable.paternalSpecific.DHBs.ZFP57.bed -b /mnt/Storage
 python mcall_ave_methyl.py stable.maternalSpecific.DHBs.ZFP57.morula.GG.methyl stable.maternalSpecific.DHBs.ZFP57.morula.GG.methyl.bed
 python mcall_ave_methyl.py stable.paternalSpecific.DHBs.ZFP57.morula.AG.methyl stable.paternalSpecific.DHBs.ZFP57.morula.AG.methyl.bed
 
-# ------------------------------------
-#  3. Allele-specific expressed genes
-#     or known imprinting genes
-# ------------------------------------
+# # ------------------------------------
+# #  3. Allele-specific expressed genes
+# #     or known imprinting genes
+# # ------------------------------------
 
-# allele-specific expressed genes within 350kb (fold change > 2 at least 2 stages)
-cd ${path}/Expression/allelic.specific.2fold.2stage/
-awk '{OFS=FS="\t"}{if($2>350000){print $1,$2-350000,$3+350000,$4}}' ${path}/stable.maternalSpecific.DHBs.bed > stable.maternalSpecific.DHBs.350k.bed
-awk '{OFS=FS="\t"}{if($2>350000){print $1,$2-350000,$3+350000,$4}}' ${path}/stable.paternalSpecific.DHBs.bed > stable.paternalSpecific.DHBs.350k.bed
-bedtools intersect -wao -a stable.maternalSpecific.DHBs.350k.bed -b AS.FC2_2stages.pre.genelist.tss | cut -f 1-4,9 | sort -k1,1 -k2,2n | uniq | awk '{OFS=FS="\t"}{if($5=="."){print $1,$2,$3,$4,0}else{print $1,$2,$3,$4,1}}' - | sort -k1,1 -k2,2n | uniq > stable.maternalSpecific.DHBs.350k.ASGene.bed
-bedtools intersect -wao -a stable.paternalSpecific.DHBs.350k.bed -b AS.FC2_2stages.pre.genelist.tss | cut -f 1-4,9 | sort -k1,1 -k2,2n | uniq | awk '{OFS=FS="\t"}{if($5=="."){print $1,$2,$3,$4,0}else{print $1,$2,$3,$4,1}}' - | sort -k1,1 -k2,2n | uniq > stable.paternalSpecific.DHBs.350k.ASGene.bed
+# allele-specific expressed genes within 300kb (fold change > 2 at least 2 stages)
+# cd ${path}/Expression/allelic.specific.2fold.2stage/
+# awk '{OFS=FS="\t"}{if($2>300000){print $1,$2-300000,$3+300000,$4}}' ${path}/stable.maternalSpecific.DHBs.bed > stable.maternalSpecific.DHBs.300k.bed
+# awk '{OFS=FS="\t"}{if($2>300000){print $1,$2-300000,$3+300000,$4}}' ${path}/stable.paternalSpecific.DHBs.bed > stable.paternalSpecific.DHBs.300k.bed
+# bedtools intersect -wao -a stable.maternalSpecific.DHBs.300k.bed -b AS.FC2_2stages.pre.genelist.tss | cut -f 1-4,9 | sort -k1,1 -k2,2n | uniq | awk '{OFS=FS="\t"}{if($5=="."){print $1,$2,$3,$4,0}else{print $1,$2,$3,$4,1}}' - | sort -k1,1 -k2,2n | uniq > stable.maternalSpecific.DHBs.300k.ASGene.bed
+# bedtools intersect -wao -a stable.paternalSpecific.DHBs.300k.bed -b AS.FC2_2stages.pre.genelist.tss | cut -f 1-4,9 | sort -k1,1 -k2,2n | uniq | awk '{OFS=FS="\t"}{if($5=="."){print $1,$2,$3,$4,0}else{print $1,$2,$3,$4,1}}' - | sort -k1,1 -k2,2n | uniq > stable.paternalSpecific.DHBs.300k.ASGene.bed
 
-# known imprinting genes within 350kb
-cd ${path}/Expression/Known.IG/
-awk '{OFS=FS="\t"}{if($2>350000){print $1,$2-350000,$3+350000,$4}}' ${path}/stable.maternalSpecific.DHBs.bed > stable.maternalSpecific.DHBs.350k.bed
-awk '{OFS=FS="\t"}{if($2>350000){print $1,$2-350000,$3+350000,$4}}' ${path}/stable.paternalSpecific.DHBs.bed > stable.paternalSpecific.DHBs.350k.bed
-bedtools intersect -wao -a stable.maternalSpecific.DHBs.350k.bed -b known.imprinting.gene.sort.tss | cut -f 1-4,9 | sort -k1,1 -k2,2n | uniq | awk '{OFS=FS="\t"}{if($5=="."){print $1,$2,$3,$4,0}else{print $1,$2,$3,$4,1}}' - | sort -k1,1 -k2,2n | uniq > stable.maternalSpecific.DHBs.350k.Known.IG.bed
-bedtools intersect -wao -a stable.paternalSpecific.DHBs.350k.bed -b known.imprinting.gene.sort.tss | cut -f 1-4,9 | sort -k1,1 -k2,2n | uniq | awk '{OFS=FS="\t"}{if($5=="."){print $1,$2,$3,$4,0}else{print $1,$2,$3,$4,1}}' - | sort -k1,1 -k2,2n | uniq > stable.paternalSpecific.DHBs.350k.Known.IG.bed
+# known imprinting genes within 300kb
+# cd ${path}/Expression/Known.IG/
+# awk '{OFS=FS="\t"}{if($2>300000){print $1,$2-300000,$3+300000,$4}}' ${path}/stable.maternalSpecific.DHBs.bed > stable.maternalSpecific.DHBs.300k.bed
+# awk '{OFS=FS="\t"}{if($2>300000){print $1,$2-300000,$3+300000,$4}}' ${path}/stable.paternalSpecific.DHBs.bed > stable.paternalSpecific.DHBs.300k.bed
+# bedtools intersect -wao -a stable.maternalSpecific.DHBs.300k.bed -b known.imprinting.gene.sort.tss | cut -f 1-4,9 | sort -k1,1 -k2,2n | uniq | awk '{OFS=FS="\t"}{if($5=="."){print $1,$2,$3,$4,0}else{print $1,$2,$3,$4,1}}' - | sort -k1,1 -k2,2n | uniq > stable.maternalSpecific.DHBs.300k.Known.IG.bed
+# bedtools intersect -wao -a stable.paternalSpecific.DHBs.300k.bed -b known.imprinting.gene.sort.tss | cut -f 1-4,9 | sort -k1,1 -k2,2n | uniq | awk '{OFS=FS="\t"}{if($5=="."){print $1,$2,$3,$4,0}else{print $1,$2,$3,$4,1}}' - | sort -k1,1 -k2,2n | uniq > stable.paternalSpecific.DHBs.300k.Known.IG.bed
 
 # ----------------------------
-#  4. Calculating ranking score
+#  3. Calculating ranking score
 # ----------------------------
 
 Rscript score.r
