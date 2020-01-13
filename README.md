@@ -23,7 +23,7 @@ Here, we provided main source codes for the study.
 #### 2. Identificaiton of potential regulatory MHBs
 ------------------------------------------------------------------------------------------------------------------------------
 
-> We calculated a score for each stable allele-specific MHB based on the features of known ICRs, including the allele-imbalance of DNA methylation amount and H3K9me3 signals, the existence of known imprinted genes or allele-specific expressed genes within 350 kb, the overlapping with DNase I hypersensitive sites, Zpf57 binding motifs, CTCF binding sites and lncRNA genes. 
+> We calculated a score for each stable allele-specific MHB based on the features of known ICRs, including the allele-imbalance of DNA methylation amount and H3K9me3 signals, the overlapping with DNase I hypersensitive sites, Zpf57 binding motifs, CTCF binding sites and lncRNA genes. 
 
 + The source code for identification of potential regulatory allele-specific MHBs is available at [prMHB_identification]().
 
