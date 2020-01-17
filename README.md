@@ -18,13 +18,13 @@ Here, we provided main source codes for the study.
 
 > To characterize the features of MHBs in pre-implantation embryos, we identified 6,002, 6,197, 6,622 and 8,108 MHBs at 2-cell, 8-cell, morula and ICM stages separately, by applying ChromHMM on DNA methylation amount and H3K9me3 signals.
 
-+ The source code for identification of MHBs is available at	[MHB_identification]().
++ The source code for identification of MHBs is available at	[MHB_identification](MHB_identification/).
 
 #### 2. Identificaiton of potential regulatory MHBs
 ------------------------------------------------------------------------------------------------------------------------------
 
 > We calculated a score for each stable allele-specific MHB based on the features of known ICRs, including the allele-imbalance of DNA methylation amount and H3K9me3 signals, the overlapping with DNase I hypersensitive sites, Zpf57 binding motifs, CTCF binding sites and lncRNA genes. 
 
-+ The source code for identification of potential regulatory allele-specific MHBs is available at [prMHB_identification]().
++ The source code for identification of potential regulatory allele-specific MHBs is available at [prMHB_identification](prMHB_identification/).
 
   
