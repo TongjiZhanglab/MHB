@@ -113,26 +113,26 @@ pat_score[pat_ZFP57_methylated,"methylated.ZFP57"] <- 1
 # -------------
 
 # allele-specific gene expression in pre-implantation embryos (FC=2, stage = 2)
-# mat_expression <- read.csv("Expression/allelic.specific.2fold.2stage/stable.maternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
-# pat_expression <- read.csv("Expression/allelic.specific.2fold.2stage/stable.paternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
-# mat_score$asym.expression <- 0
-# mat_score[mat_expression[which(mat_expression[,5]==1),4],"asym.expression"] <- 1
-# pat_score$asym.expression <- 0
-# pat_score[pat_expression[which(pat_expression[,5]==1),4],"asym.expression"] <- 1
+mat_expression <- read.csv("Expression/allelic.specific.2fold.2stage/stable.maternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
+pat_expression <- read.csv("Expression/allelic.specific.2fold.2stage/stable.paternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
+mat_score$asym.expression <- 0
+mat_score[mat_expression[which(mat_expression[,5]==1),4],"asym.expression"] <- 1
+pat_score$asym.expression <- 0
+pat_score[pat_expression[which(pat_expression[,5]==1),4],"asym.expression"] <- 1
 
 # allele-specific gene expression in pre-implantation embryos (FC=2, stage = 1)
-# mat_expression <- read.csv("Expression/allelic.specific.2fold.1stage/stable.maternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
-# pat_expression <- read.csv("Expression/allelic.specific.2fold.1stage/stable.paternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
-# mat_score$asym.expression <- 0
-# mat_score[mat_expression[which(mat_expression[,5]==1),4],"asym.expression"] <- 1
-# pat_score$asym.expression <- 0
-# pat_score[pat_expression[which(pat_expression[,5]==1),4],"asym.expression"] <- 1
+mat_expression <- read.csv("Expression/allelic.specific.2fold.1stage/stable.maternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
+pat_expression <- read.csv("Expression/allelic.specific.2fold.1stage/stable.paternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
+mat_score$asym.expression <- 0
+mat_score[mat_expression[which(mat_expression[,5]==1),4],"asym.expression"] <- 1
+pat_score$asym.expression <- 0
+pat_score[pat_expression[which(pat_expression[,5]==1),4],"asym.expression"] <- 1
 
 # known imprinting genes
-# mat_KnownIG <- read.csv("Expression/Known.IG/stable.maternalSpecific.DHBs.350k.Known.IG.bed", header = F, sep = "\t", stringsAsFactors = F)
-# pat_KnownIG <- read.csv("Expression/Known.IG/stable.paternalSpecific.DHBs.350k.Known.IG.bed", header = F, sep = "\t", stringsAsFactors = F)
-# mat_score[mat_expression[which(mat_KnownIG[,5]==1),4],"asym.expression"] <- 1
-# pat_score[pat_expression[which(pat_KnownIG[,5]==1),4],"asym.expression"] <- 1
+mat_KnownIG <- read.csv("Expression/Known.IG/stable.maternalSpecific.DHBs.350k.Known.IG.bed", header = F, sep = "\t", stringsAsFactors = F)
+pat_KnownIG <- read.csv("Expression/Known.IG/stable.paternalSpecific.DHBs.350k.Known.IG.bed", header = F, sep = "\t", stringsAsFactors = F)
+mat_score[mat_expression[which(mat_KnownIG[,5]==1),4],"asym.expression"] <- 1
+pat_score[pat_expression[which(pat_KnownIG[,5]==1),4],"asym.expression"] <- 1
 
 # ----------
 #  ranking
@@ -140,13 +140,13 @@ pat_score[pat_ZFP57_methylated,"methylated.ZFP57"] <- 1
 
 mat_score$asym.modification <- (mat_score$asym.H3K9me3 / 5 + mat_score$asym.methyl / 5) / 2
 mat_score$regulatory.elements <- (mat_score$DHS + mat_score$CTCF + mat_score$lncRNA + mat_score$methylated.ZFP57) / 5
-# mat_score$score <- mat_score$asym.modification + mat_score$regulatory.elements + mat_score$asym.expression
-mat_score$score <- mat_score$asym.modification + mat_score$regulatory.elements
+mat_score$score <- mat_score$asym.modification + mat_score$regulatory.elements + mat_score$asym.expression
+# mat_score$score <- mat_score$asym.modification + mat_score$regulatory.elements
 
 pat_score$asym.modification <- (pat_score$asym.H3K9me3 / 5 + pat_score$asym.methyl / 5) / 2
 pat_score$regulatory.elements <- (pat_score$DHS + pat_score$CTCF + pat_score$lncRNA + pat_score$methylated.ZFP57) / 5
-# pat_score$score <- pat_score$asym.modification + pat_score$regulatory.elements + pat_score$asym.expression
-pat_score$score <- pat_score$asym.modification + pat_score$regulatory.elements
+pat_score$score <- pat_score$asym.modification + pat_score$regulatory.elements + pat_score$asym.expression
+# pat_score$score <- pat_score$asym.modification + pat_score$regulatory.elements
 
 mat_score <- mat_score[order(mat_score$score,decreasing = TRUE),]
 pat_score <- pat_score[order(pat_score$score,decreasing = TRUE),]
