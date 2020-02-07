@@ -121,12 +121,12 @@ pat_score$asym.expression <- 0
 pat_score[pat_expression[which(pat_expression[,5]==1),4],"asym.expression"] <- 1
 
 # allele-specific gene expression in pre-implantation embryos (FC=2, stage = 1)
-mat_expression <- read.csv("Expression/allelic.specific.2fold.1stage/stable.maternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
-pat_expression <- read.csv("Expression/allelic.specific.2fold.1stage/stable.paternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
-mat_score$asym.expression <- 0
-mat_score[mat_expression[which(mat_expression[,5]==1),4],"asym.expression"] <- 1
-pat_score$asym.expression <- 0
-pat_score[pat_expression[which(pat_expression[,5]==1),4],"asym.expression"] <- 1
+# mat_expression <- read.csv("Expression/allelic.specific.2fold.1stage/stable.maternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
+# pat_expression <- read.csv("Expression/allelic.specific.2fold.1stage/stable.paternalSpecific.DHBs.350k.ASGene.bed", header = F,sep = "\t", stringsAsFactors = F)
+# mat_score$asym.expression <- 0
+# mat_score[mat_expression[which(mat_expression[,5]==1),4],"asym.expression"] <- 1
+# pat_score$asym.expression <- 0
+# pat_score[pat_expression[which(pat_expression[,5]==1),4],"asym.expression"] <- 1
 
 # known imprinting genes
 mat_KnownIG <- read.csv("Expression/Known.IG/stable.maternalSpecific.DHBs.350k.Known.IG.bed", header = F, sep = "\t", stringsAsFactors = F)
